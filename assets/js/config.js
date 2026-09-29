@@ -4,7 +4,7 @@
 //
 // AJUSTE a linha abaixo com o endereço real do seu backend depois do deploy
 // (ex.: no Render, algo como "https://meteora-backend.onrender.com/api").
-const API_BASE_URL_PRODUCAO = "https://SEU-BACKEND-AQUI.onrender.com/api";
+const API_BASE_URL_PRODUCAO = "https://meteora-backend-g435.onrender.com/";
 const API_BASE_URL_LOCAL = "http://localhost:8080/api";
 
 const API_BASE_URL = ["localhost", "127.0.0.1"].includes(window.location.hostname)
