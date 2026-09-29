@@ -1,0 +1,43 @@
+
+.texto-menor {
+    font-size: 13px;
+}
+
+.divs-facilidades {
+    width: 325px;
+}
+
+.div-novidades {
+    width: 325px;
+}
+
+.botao-lilas {
+    background-color: #9353FF;
+}
+
+.verde-limao {
+    color: #DAFF01;
+}
+
+@media(min-width: 768px) {
+
+    .div-novidades {
+        width: 696px;
+    }
+
+}
+
+/* ---- Integração com o backend (carrinho, catálogo dinâmico, conta) ---- */
+
+.categoria-card:hover {
+    opacity: 0.85;
+}
+
+#produtos-grid .card-img-top {
+    height: 260px;
+    object-fit: cover;
+}
+
+.offcanvas-body #corpoCarrinho {
+    overflow-y: auto;
+}

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <title>Meteora</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md bg-black navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <h1 class="m-0"><img class="d-block" src="./assets/logo-meteora.png" alt="Logo da loja Meteora"></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lojas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Novidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Promoção</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" id="formBusca">
+                    <input class="form-control me-2 rounded-0" type="search" id="inputBusca" placeholder="Digite o produto"
+                        aria-label="Pesquisar">
+                    <button class="btn btn-outline-light rounded-0" type="submit">Buscar</button>
+                </form>
+                <div class="d-flex align-items-center ms-md-3 mt-3 mt-md-0 gap-2">
+                    <div id="areaConta"></div>
+                    <button class="btn btn-outline-light position-relative rounded-0" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrinho" aria-controls="offcanvasCarrinho">
+                        <i class="bi bi-cart3"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            id="badgeCarrinho" style="display:none;">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100 img-fluid d-md-none" src="./assets/Mobile/banner1-mobile.png"
+                    alt="Modelo feminina vestindo blusa rosa fluorescente, em fundo lilás.">
+                <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./assets/Tablet/banner1-tablet.png"
+                    alt="Modelo feminina vestindo blusa rosa fluorescente, em fundo lilás.">
+                <img class="w-100 img-fluid d-none d-xl-block" src="./assets/Desktop/banner1-desktop.png"
+                    alt="Modelo feminina vestindo blusa rosa fluorescente, em fundo lilás.">
+            </div>
+            <div class="carousel-item">
+                <img class="w-100 img-fluid d-md-none" src="./assets/Mobile/banner2-mobile.png"
+                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+                <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./assets/Tablet/banner2-tablet.png"
+                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+                <img class="w-100 img-fluid d-none d-xl-block" src="./assets/Desktop/banner2-desktop.png"
+                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+                <div class="carousel-caption">
+                    <h5 class="fs-1">COLEÇÃO ATEMPORAL</h5>
+                    <p class="fs-4">Estilo e qualidade para durar.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="w-100 img-fluid d-md-none" src="./assets/Mobile/banner3-mobile.png"
+                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+                <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./assets/Tablet/banner3-tablet.png"
+                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+                <img class="w-100 img-fluid d-none d-xl-block" src="./assets/Desktop/banner3-desktop.png"
+                    alt="Modelo feminina utilizando óculos escuros e vestindo conjunto esportivo de blusa e calça na cor preta, sentada em um sofá preto em um fundo rosa.">
+                <div class="carousel-caption">
+                    <h5 class="fs-1">COLEÇÃO ATEMPORAL</h5>
+                    <p class="fs-4">Alto impacto visual, baixo impacto ambiental!</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+    <h2 class="text-center my-3 my-xl-5">Busque por categoria:</h2>
+
+    <div class="container row mx-auto g-4">
+
+        <div class="col-6 col-md-4 col-xxl-2">
+            <div class="card rounded-0 border-0 categoria-card" style="cursor:pointer;" data-slug="camisetas">
+                <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-camiseta.png"
+                    alt="Camiseta masculina de manga na cor verde, com bolso, com detalhe vermelho.">
+                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-camiseta.png"
+                    alt="Camiseta masculina de manga na cor verde, com bolso, com detalhe vermelho.">
+                <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-camiseta.png"
+                    alt="Camiseta masculina de manga na cor verde, com bolso, com detalhe vermelho.">
+                <div class="card-header bg-black text-bg-dark">
+                    <p class="text-center card-text">
+                        Camisetas
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-xxl-2">
+            <div class="card rounded-0 border-0 categoria-card" style="cursor:pointer;" data-slug="bolsas">
+                <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-bolsas.png"
+                    alt="Bolsa feminina de couro na cor marrom, com cortes quadrados, e alça dourada em formato de corrente com detalhe verde, em fundo verde limão.">
+                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-bolsas.png"
+                    alt="Bolsa feminina de couro na cor marrom, com cortes quadrados, e alça dourada em formato de corrente com detalhe verde, em fundo verde limão.">
+                <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-bolsa.png"
+                    alt="Bolsa feminina de couro na cor marrom, com cortes quadrados, e alça dourada em formato de corrente com detalhe verde, em fundo verde limão.">
+                <div class="card-header bg-black text-bg-dark">
+                    <p class="text-center card-text">
+                        Bolsas
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-xxl-2">
+            <div class="card rounded-0 border-0 categoria-card" style="cursor:pointer;" data-slug="calcados">
+                <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-calcados.png"
+                    alt="Par de tênis unissex com cor predominante branca e traços na cores laranja, azul, verde e cadarço vermelho, em fundo verde limão.">
+                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-calcados.png"
+                    alt="Par de tênis unissex com cor predominante branca e traços na cores laranja, azul, verde e cadarço vermelho, em fundo verde limão.">
+                <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-calcados.png"
+                    alt="Par de tênis unissex com cor predominante branca e traços na cores laranja, azul, verde e cadarço vermelho, em fundo verde limão.">
+                <div class="card-header bg-black text-bg-dark">
+                    <p class="text-center card-text">
+                        Calçados
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-xxl-2">
+            <div class="card rounded-0 border-0 categoria-card" style="cursor:pointer;" data-slug="calcas">
+                <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-calcas.png"
+                    alt="Quatro calças jeans dobradas e organizadas uma acima da outra, em fundo verde limão.">
+                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-calcas.png"
+                    alt="Quatro calças jeans dobradas e organizadas uma acima da outra, em fundo verde limão.">
+                <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-calcas.png"
+                    alt="Quatro calças jeans dobradas e organizadas uma acima da outra, em fundo verde limão.">
+                <div class="card-header bg-black text-bg-dark">
+                    <p class="text-center card-text">
+                        Calças
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-xxl-2">
+            <div class="card rounded-0 border-0 categoria-card" style="cursor:pointer;" data-slug="casacos">
+                <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-casacos.png"
+                    alt="Casaco masculino na cor marrom em fundo verde limão.">
+                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-casacos.png"
+                    alt="Casaco masculino na cor marrom em fundo verde limão.">
+                <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-casacos.png"
+                    alt="Casaco masculino na cor marrom em fundo verde limão.">
+                <div class="card-header bg-black text-bg-dark">
+                    <p class="text-center card-text">
+                        Casacos
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-xxl-2">
+            <div class="card rounded-0 border-0 categoria-card" style="cursor:pointer;" data-slug="oculos">
+                <img class="d-md-none d-block" src="./assets/Mobile/categorias/categoria-oculos.png"
+                    alt="Óculos de Sol com lentes arredondadas e armação dourada, em fundo verde limão.">
+                <img class="d-none d-md-block d-xl-none" src="./assets/Tablet/categorias/categoria-oculos.png"
+                    alt="Óculos de Sol com lentes arredondadas e armação dourada, em fundo verde limão.">
+                <img class="d-none d-xl-block" src="./assets/Desktop/categorias/categoria-oculos.png"
+                    alt="Óculos de Sol com lentes arredondadas e armação dourada, em fundo verde limão.">
+                <div class="card-header bg-black text-bg-dark">
+                    <p class="text-center card-text">
+                        Óculos
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="container text-center my-3 my-xl-5">Produtos que estão bombando!</h2>
+
+    <div class="container">
+        <div id="statusFiltroProdutos" class="text-center mb-3 d-none"></div>
+        <div class="row mx-auto" id="produtos-grid">
+            <!-- Preenchido dinamicamente por assets/js/products.js a partir da API do backend -->
+            <div class="text-center w-100 py-5">
+                <div class="spinner-border" role="status"><span class="visually-hidden">Carregando...</span></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="pb-4 bg-black text-bg-dark">
+
+        <h2 class="text-center py-3">Conheça todas as nossas facilidades</h2>
+
+        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-3 px-3">
+            <div class="divs-facilidades d-flex align-items-center">
+                <div><i class="verde-limao bi bi-x-diamond fs-1"></i></div>
+                <div>
+                    <div class="ms-3 mb-1 verde-limao">PAGUE PELO PIX</div>
+                    <div class="texto-menor ms-3">Ganhe 5% OFF em
+                        pagamentos via PIX</div>
+                </div>
+            </div>
+
+            <div class="divs-facilidades d-flex">
+                <div><i class="verde-limao bi bi-arrow-repeat fs-1"></i></div>
+                <div>
+                    <div class="ms-3 mb-1 verde-limao">TROCA GRÁTIS</div>
+                    <div class="texto-menor ms-3">Fique livre para trocar em até 30 dias.</div>
+                </div>
+            </div>
+
+            <div class="divs-facilidades d-flex">
+                <div><i class="verde-limao bi bi-flower1 fs-1"></i></div>
+                <div>
+                    <div class="ms-3 mb-1 verde-limao">SUSTENTABILIDADE</div>
+                    <div class="texto-menor ms-3">Moda responsável, que respeita o meio ambiente.</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <form class="container border border-secondary my-3 my-xl-5 p-3 text-center div-novidades mx-auto" id="formNewsletter">
+        <h5>
+            Quer receber nossas novidades, promoções exclusivas e 10% OFF na primeira
+            compra? Cadastre-se!
+        </h5>
+
+        <div class="input-group my-3">
+            <input type="email" class="form-control border-secondary rounded-0" id="inputNewsletterEmail"
+                placeholder="Digite seu e-mail" aria-label="Digite seu e-mail" aria-describedby="button-addon2" required />
+            <button type="submit" class="btn btn-primary botao-lilas rounded-0 border-0 "
+                id="button-addon2">Enviar</button>
+        </div>
+        <div id="newsletterFeedback"></div>
+    </form>
+
+    <footer class="text-center bg-black text-bg-dark">
+        <p class="card-text py-3">2023 <i class="bi bi-c-circle"></i> Desenvolvido por Felippe Nobre de Souza | Projeto
+            fictício sem fins
+            comerciais.</p>
+    </footer>
+
+    <!-- ==================== Modal: Login ==================== -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title">Entrar na minha conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formLogin">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">E-mail</label>
+                            <input type="email" class="form-control rounded-0" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginSenha" class="form-label">Senha</label>
+                            <input type="password" class="form-control rounded-0" id="loginSenha" required>
+                        </div>
+                        <div id="feedbackLogin"></div>
+                        <button type="submit" class="btn btn-primary botao-lilas rounded-0 border-0 w-100">Entrar</button>
+                        <p class="text-center mt-3 mb-0">
+                            Não tem conta? <a href="#" id="linkIrParaRegistro">Cadastre-se</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== Modal: Registro ==================== -->
+    <div class="modal fade" id="modalRegistro" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title">Criar minha conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formRegistro">
+                        <div class="mb-3">
+                            <label for="registroNome" class="form-label">Nome</label>
+                            <input type="text" class="form-control rounded-0" id="registroNome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registroEmail" class="form-label">E-mail</label>
+                            <input type="email" class="form-control rounded-0" id="registroEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registroSenha" class="form-label">Senha (mín. 6 caracteres)</label>
+                            <input type="password" class="form-control rounded-0" id="registroSenha" minlength="6" required>
+                        </div>
+                        <div id="feedbackRegistro"></div>
+                        <button type="submit" class="btn btn-primary botao-lilas rounded-0 border-0 w-100">Cadastrar</button>
+                        <p class="text-center mt-3 mb-0">
+                            Já tem conta? <a href="#" id="linkIrParaLogin">Entrar</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== Modal: Detalhe do produto ==================== -->
+    <div class="modal fade" id="modalProduto" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalhes do produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body" id="modalProdutoCorpo"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== Offcanvas: Carrinho ==================== -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrinho" aria-labelledby="offcanvasCarrinhoLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasCarrinhoLabel"><i class="bi bi-cart3"></i> Meu carrinho</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="corpoCarrinho" class="flex-grow-1"></div>
+            <div id="rodapeCarrinho"></div>
+        </div>
+    </div>
+
+    <!-- ==================== Modal: Checkout ==================== -->
+    <div class="modal fade" id="modalCheckout" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title">Finalizar compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formCheckout">
+                        <h6>Endereço de entrega</h6>
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-3">
+                                <label class="form-label">CEP</label>
+                                <input type="text" class="form-control rounded-0" id="checkoutCep" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Logradouro</label>
+                                <input type="text" class="form-control rounded-0" id="checkoutLogradouro" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Número</label>
+                                <input type="text" class="form-control rounded-0" id="checkoutNumero" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Complemento</label>
+                                <input type="text" class="form-control rounded-0" id="checkoutComplemento">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Bairro</label>
+                                <input type="text" class="form-control rounded-0" id="checkoutBairro" required>
+                            </div>
+                            <div class="col-md-8">
+                                <label class="form-label">Cidade</label>
+                                <input type="text" class="form-control rounded-0" id="checkoutCidade" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Estado (UF)</label>
+                                <input type="text" class="form-control rounded-0" id="checkoutEstado" maxlength="2" required>
+                            </div>
+                        </div>
+
+                        <h6>Forma de pagamento</h6>
+                        <select class="form-select rounded-0 mb-3" id="checkoutFormaPagamento" required>
+                            <option value="PIX">Pix (5% OFF)</option>
+                            <option value="CARTAO">Cartão</option>
+                            <option value="BOLETO">Boleto</option>
+                        </select>
+
+                        <div class="d-flex justify-content-between fs-5 fw-bold mb-3">
+                            <span>Total estimado</span>
+                            <span id="checkoutResumoTotal">R$0,00</span>
+                        </div>
+
+                        <div id="feedbackCheckout"></div>
+                        <button type="submit" class="btn btn-primary botao-lilas rounded-0 border-0 w-100">
+                            Confirmar pedido
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== Modal: Pedido confirmado ==================== -->
+    <div class="modal fade" id="modalPedidoConfirmado" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-check-circle-fill verde-limao"></i> Pedido confirmado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body" id="modalPedidoConfirmadoCorpo"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== Modal: Meus pedidos ==================== -->
+    <div class="modal fade" id="modalPedidos" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title">Meus pedidos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body" id="modalPedidosCorpo"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container de notificações (toasts) -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer" style="z-index: 1080;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <!-- Integração com o backend (meteora-backend) -->
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/products.js"></script>
+    <script src="./assets/js/auth.js"></script>
+    <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/newsletter.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
